@@ -1,0 +1,37 @@
+CREATE DATABASE bwacoba;
+USE bwacoba;
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `occupation` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password_hash` varchar(255) DEFAULT NULL,
+  `avatar_file_name` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+======================================================================================
+cd bwacoba
+go mod init bwacoba
+ls
+cat go.mod
+======================================================================================
+cd bwacoba
+go get -u github.com/gin-gonic/gin
+go get -u gorm.io/gorm
+
+https://gorm.io/docs/connecting_to_the_database.html
+copas ke func main
+cek error
+cetak koneksi data bagus
+
+======================================================================================
+buat folder baru user, buat struct database, package user
+buat variable "users" array dari struct database
+panggil fungsi Find dari db yg parameternya pointer 
+buat perulangan dari users
+
