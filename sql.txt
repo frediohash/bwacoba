@@ -30,8 +30,43 @@ cek error
 cetak koneksi data bagus
 
 ======================================================================================
+Mengambil data dari database
+
 buat folder baru user, buat struct database, package user
 buat variable "users" array dari struct database
 panggil fungsi Find dari db yg parameternya pointer 
 buat perulangan dari users
+
+var users []user.User
+
+======================================================================================
+Menghasilkan Output JSON
+
+Buat func handler, masukkan semua yg func main kesini
+main.go, tambahkan c.JSON(http.Status.OK, users)
+
+Ke func main, router := gin.Default(), router.GET("/handler", users), 
+Ke func handler, c.JSON(http.Status.OK, users)
+
+======================================================================================
+Struktur Folder 
+
+Buat folder handler, user.go
+Buat Folder user, entity, input, repository, service 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
