@@ -15,8 +15,11 @@ func main() {
 		log.Fatal(err.Error())
 	}
 	userRepository := user.NewRepository(db)
-	user := user.User{
-		Name: "Test Simpans",
-	}
-	userRepository.Save(user)
+	userService := user.NewService(userRepository)
+	userinput := user.RegisterUserInput{}
+	userinput.Name = "Fredio"
+	userinput.Occupation = "DevOps"
+	userinput.Email = "onamel313@gmail.com"
+	userinput.Password = "password"
+	userService.RegisterUser(userinput)
 }
