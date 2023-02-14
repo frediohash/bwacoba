@@ -1,8 +1,7 @@
 package main
 
 import (
-	"bwacoba/users"
-	"fmt"
+	"bwacoba/users/user"
 	"log"
 
 	"gorm.io/driver/mysql"
@@ -15,19 +14,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	fmt.Println("Connected Successfully")
-
-	var users []users.Users
-	length := len(users)
-	fmt.Println(length)
-
-	db.Find(&users)
-	length = len(users)
-	fmt.Println(length)
-
-	for _, user := range users {
-		fmt.Println(user.Name)
-		fmt.Println(user.Email)
-		fmt.Println("=======================")
+	userRepository := user.NewRepository(db)
+	user := user.User{
+		Name: "Test Simpans",
 	}
+	userRepository.Save(user)
 }
