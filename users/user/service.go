@@ -33,5 +33,5 @@ func (s *service) RegisterUser(input RegisterUserInput) (User, error) {
 }
 
 //buat objek baru
-//mapping struct input ke struct user
-//simpan struct User melalui repository
+//mapping struct input ke struct user pakai object
+//simpan struct User melalui repository pakai object
